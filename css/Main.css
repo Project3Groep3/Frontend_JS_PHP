@@ -1,0 +1,41 @@
+body
+{
+    margin: 0;
+    padding: 0;
+
+    background-color: red;
+    width: 100%;
+}
+
+#title
+{
+    position: relative;
+    display: block;
+    height: 50px;
+    
+    margin: 0;
+    padding: 0;
+    
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+#events
+{
+    background-color: white;
+    margin: 5% 10% 0% 10%;
+}
+
+#events table
+{
+    width: 100%;
+}
+
+#events td
+{
+    display: inline-block;
+    background-color: blue;
+    width: 32.9%;
+    height: 245px;
+}
