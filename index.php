@@ -1,13 +1,10 @@
 <?php
-
+    $name = 'Test';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    </head>
+    <?php include 'included/header.php' ?>
     <body>
         
     </body>
