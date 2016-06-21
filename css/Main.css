@@ -18,7 +18,7 @@ body
     padding: 0;
     
     width: 100%;
-    background-color: #3949ab;
+    background-color: #00796b;
 }
 
 /* De h2 tekst van de header */
@@ -27,7 +27,7 @@ body
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #3f51b5;
+    background-color: #00695c;
     color: white;
     margin: auto;
     height: 50px;
