@@ -3,38 +3,52 @@ body
     margin: 0;
     padding: 0;
 
-    background-color: red;
+    background-color: #fafafa;
     width: 100%;
 }
 
+/* De Title header */
 #title
 {
     position: relative;
     display: block;
-    height: 50px;
+    height: 75px;
     
     margin: 0;
     padding: 0;
     
     width: 100%;
-    text-align: center;
-    background-color: white;
+    background-color: #3949ab;
 }
 
+/* De h2 tekst van de header */
+#title h2
+{    
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #3f51b5;
+    color: white;
+    margin: auto;
+    height: 50px;
+}
+
+/* De evenementen div */
 #events
 {
     background-color: white;
     margin: 5% 10% 0% 10%;
 }
 
+/* Table met alle events */
 #events table
 {
     width: 100%;
 }
 
+/* Evenement cell */
 #events td
 {
-    display: inline-block;
     background-color: blue;
     width: 32.9%;
     height: 245px;
