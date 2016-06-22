@@ -7,6 +7,8 @@ echo <<<HEADER
     <link rel="stylesheet" href="css/Main.css" type="text/css">
     <script src="_js/jquery-ui/external/jquery/jquery.js"></script>
     <script src="_js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="scripts/General.js"></script>
+    <script src="scripts/DataHandler.js"></script>
     <script src="scripts/Main.js"></script>
 </head>
 HEADER;

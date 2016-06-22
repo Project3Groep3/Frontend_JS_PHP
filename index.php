@@ -1,6 +1,6 @@
 <?php
     // De naam van het project
-    $name = 'Test';
+    $name = 'Mojo';
 ?>
 
 <!DOCTYPE html>
