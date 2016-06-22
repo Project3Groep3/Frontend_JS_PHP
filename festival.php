@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php include 'included/header_main.php' ?>
+    <?php include 'included/header_festival.php' ?>
     <body>
         <?php
             include 'included/title.php'; 

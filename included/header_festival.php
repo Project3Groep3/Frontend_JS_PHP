@@ -7,5 +7,5 @@
     <script src="_js/jquery-ui/jquery-ui.min.js"></script>
     <script src="scripts/General.js"></script>
     <script src="scripts/DataHandler.js"></script>
-    <script src="scripts/Main.js"></script>
+    <script src="scripts/Festival.js"></script>
 </head>

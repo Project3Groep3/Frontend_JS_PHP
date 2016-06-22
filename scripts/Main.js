@@ -113,4 +113,11 @@ $(document).ready(function ()
         });
     });
 
+    // Wanneer je op een festival klikt
+    $('#events td div').on('click', function(e)
+    {
+        var txt = $(this).find('h2').text();
+
+        document.location = 'festival.php';
+    });
 });
