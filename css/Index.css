@@ -1,0 +1,55 @@
+/* De evenementen div */
+#events
+{
+    background-color: white;
+    margin: 5% 10% 0% 10%;
+}
+
+/* Table met alle events */
+#events table
+{
+    width: 100%;
+}
+
+/* Evenement cell */
+#events td
+{
+    width: 32.9%;
+    height: 245px;
+}
+
+/* De div element */
+#events td div
+{
+    position: relative;
+}
+
+/* De evenementen images */
+#events td div img
+{
+    width: 100%;
+    height: 250px;
+    z-index: 0;
+    border: 1px solid black;
+}
+
+/* De naam van het evenement */
+#events td div h2
+{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 1;
+    top: 75%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Informatie van evenement */
+#events td div h4
+{
+    position: absolute;
+    color: black;
+    z-index: 1;
+    top: 75%;
+    background-color: rgba(255, 255, 255, 0.6);
+}

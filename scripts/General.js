@@ -9,7 +9,7 @@ function hexToBase64(str)
 
 /*  Zoekt uit of de image jpeg/png is
 *   @param1: De binary/hex data
-*   return welke van de twee datatype het is
+*   return: welke van de twee datatype het is
 */
 function getDataType(data)
 {

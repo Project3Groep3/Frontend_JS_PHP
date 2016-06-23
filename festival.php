@@ -4,7 +4,7 @@
     <body>
         <?php
             include 'included/title.php'; 
-            include 'included/start.php';
+            include 'included/festivalInfo.php';
         ?>
     </body>
 </html>

@@ -1,3 +1,3 @@
 <div id="title">
-    <h2>Mojo Evenementen</h2>
+    <h2><?php $title; ?></h2>
 </div>
