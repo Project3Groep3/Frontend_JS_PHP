@@ -118,6 +118,6 @@ $(document).ready(function ()
     {
         var txt = $(this).find('h2').text();
 
-        document.location = 'festival.php';
+        navigateTo('festival.php', 'festival=' + txt, 'index.php');
     });
 });

@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <?php include 'included/header_festival.php' ?>
@@ -7,7 +11,7 @@
             $title = 'Mojo Evenementen';
 
             include 'included/title.php'; 
-            include 'included/festivalInfo.php';
+            include 'included/artiestInfo.php';
         ?>
     </body>
 </html>

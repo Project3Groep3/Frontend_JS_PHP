@@ -1,3 +1,14 @@
+// Voegt functie toe aan de terug knop
+$(document).ready(function()
+{
+    // Wanneer er op de terug knop is gedrukt gaat je terug naar de vorige pagina
+    $('#terug').on('click', function()
+    {
+        navigate($(this).attr('data-prev'));      
+    });
+
+});
+
 /*  Zet binary/hex data om naar base64
 *   @param1: De binary/hex data die moet worden omgezet
 *   return: De base64 string
@@ -34,4 +45,43 @@ function getDataType(data)
     }
 
     return type;
+}
+
+/*  Navigeert naar een link met get parameters
+*   @param1: De link
+*   @param2: De get parameters
+*   @param3: De vorige pagina
+*   geen return
+*/
+function navigateTo(link, get, previous)
+{
+    window.location = link + '?' + get + '&previous=' + previous;
+}
+
+/*  Navigeert naar een link met get parameters
+*   @param1: De link
+*   geen return
+*/
+function navigate(link)
+{
+    window.location = link;
+}
+
+/*  Haalt de festival op
+*   @param1: De search query
+*   return: Het festival
+*/
+function getFestivalFromSearchQuery(query)
+{
+    query = query.replace('%20', ' ');
+    query = query.replace('&', ' ');
+    query = query.replace('?', ' ');
+    query = query.replace('festival', ' ');
+
+    var start = query.indexOf(' ') + 3;
+    var end = query.indexOf('previous') - 4;
+
+    var nStr = query.substr(start, end);
+
+    return nStr;
 }

@@ -1,2 +1,86 @@
-body {
+/* De Headliner div */
+#headliner
+{
+    position: relative;
+    margin: 2% 2.5% 0% 2.5%;
+    width: 95%;
+    height: 550px;
+    background-color: blue;
+}
+
+/* De headline image */
+#headliner img
+{
+    width: 100%;
+    height: 550px;
+}
+
+/* Text in de headline banner */
+#headliner h2
+{
+    position: absolute;
+    color: #ff6a00;
+    width: 100%;
+    text-align: center;
+    top: 130px;
+    font-size: 120px;
+    font-weight: bolder;
+}
+
+/* De artiesten */
+#artistList
+{
+    position: relative;
+    width: 95%;
+    margin: 2% 2.5% 2% 2.5%;
+    height: 500px;
+}
+
+/* Table met alle events */
+#artistList table
+{
+    width: 100%;
+}
+
+/* Evenement cell */
+#artistList td
+{
+    width: 32.9%;
+    height: 245px;
+}
+
+/* De div element */
+#artistList td div
+{
+    position: relative;
+}
+
+/* De evenementen images */
+#artistList td div img
+{
+    width: 100%;
+    height: 250px;
+    z-index: 0;
+    border: 1px solid black;
+}
+
+/* De naam van het evenement */
+#artistList td div h2
+{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 1;
+    top: 75%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Informatie van evenement */
+#artistList td div h4
+{
+    position: absolute;
+    color: black;
+    z-index: 1;
+    top: 75%;
+    background-color: rgba(255, 255, 255, 0.6);
 }
