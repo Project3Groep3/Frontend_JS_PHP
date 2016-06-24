@@ -1,6 +1,12 @@
 // Voegt functie toe aan de terug knop
 $(document).ready(function()
 {
+    // Veranderd de thema
+    var thema = getCurrentTheme();
+    $('#title').css('background-color', thema[0].SecondaryColor).css('color', thema[0].FontColor);
+    $('#title h2').css('background-color', thema[0].PrimaryColor).css('color', thema[0].FontColor);
+    $('#title button').css('background-color', thema[0].PrimaryColor).css('color', thema[0].FontColor);
+
     // Wanneer er op de terug knop is gedrukt gaat je terug naar de vorige pagina
     $('#terug').on('click', function()
     {

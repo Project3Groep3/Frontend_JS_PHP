@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <?php include 'included/header_festival.php' ?>
+    <?php include 'included/header_artiest.php' ?>
     <body>
         <?php
             // Bepaling welke festival het is

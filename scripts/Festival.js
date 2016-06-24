@@ -1,12 +1,21 @@
+if(window.location.search.indexOf('previous') == -1)
+{
+    window.location = window.location + '&previous=index.php';    
+}
+
 $(document).ready(function () 
 {
-    var festivals = [];
 
-    var str = getFestivalFromSearchQuery(window.location.search);
-    var search = getFestivalFromSearchQuery(window.location.search).replace(new RegExp('%20', 'g'), ' ');
+    var naam = getFestivalFromSearchQuery(window.location.search);
+    var search = naam.replace(new RegExp('%20', 'g'), ' ');
 
     // Artiesten array
     var artiesten = getFestivalArtist(getFestivalIDByName(search)[0]);
+    var festival = getFestivalInfo(naam);
+    
+    // Voegt tekst toe aan de banner
+    $('#festivalInfo').append('<span>Locatie: </span>' + festival[0].Plaats + '<br />');
+    $('#festivalInfo').append('<span>Entree: </span>' + '€' + Math.round(festival[0].Prijs, 2));
 
     addEventsToPage();
 
@@ -28,8 +37,10 @@ $(document).ready(function ()
             var tr = document.createElement('tr');
 
             // Voegt cells toe, 3 per rij minder wanneer deze er niet zijn.
-            for (var j = 0; j < 3; j++) {
-                if (artiesten[index] != null) {
+            for (var j = 0; j < 3; j++) 
+            {
+                if (artiesten[index] != null) 
+                {
                     // Voegt de images en tekst toe
                     var td = document.createElement('td');
                     var div = document.createElement('div');
@@ -59,4 +70,12 @@ $(document).ready(function ()
             document.getElementById('artistTable').appendChild(tr);
         }
     }
+
+    // Wanneer je op een festival klikt
+    $('#artistTable td div').on('click', function(e)
+    {
+        var txt = $(this).find('h2').text();
+
+        navigateTo('artiest.php', 'artiest=' + txt, 'festival.php?festival=' + search);
+    });
 });

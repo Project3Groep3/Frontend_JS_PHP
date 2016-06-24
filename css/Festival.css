@@ -1,5 +1,5 @@
 /* De Headliner div */
-#headliner
+#banner
 {
     position: relative;
     margin: 2% 2.5% 0% 2.5%;
@@ -8,23 +8,42 @@
     background-color: blue;
 }
 
-/* De headline image */
-#headliner img
+/* De banner image */
+#banner img
 {
     width: 100%;
     height: 550px;
 }
 
-/* Text in de headline banner */
-#headliner h2
+/* Text in de banner */
+#banner h2
 {
     position: absolute;
     color: #ff6a00;
     width: 100%;
     text-align: center;
-    top: 130px;
+    top: 0px;
     font-size: 120px;
     font-weight: bolder;
+}
+
+/* Descriptie in de banner */
+#banner h3
+{
+    position: absolute;
+    color: black;
+    width: 100%;
+    text-align: center;
+    top: 250px;
+    font-size: 32px;
+    font-weight: lighter;
+}
+
+/* De tekst voor de descriptie */
+#banner h3 span
+{
+    color: red;
+    font-weight: bold;
 }
 
 /* De artiesten */
@@ -59,7 +78,7 @@
 #artistList td div img
 {
     width: 100%;
-    height: 250px;
+    height: 450px;
     z-index: 0;
     border: 1px solid black;
 }

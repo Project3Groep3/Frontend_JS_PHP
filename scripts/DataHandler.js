@@ -89,7 +89,7 @@ function getFestivalIDByName(name)
 */
 function getFestivalArtist(festivalID)
 {
-    var festival = [];
+    var artists = [];
 
     // GET request alle festivals
     $.ajax(
@@ -105,9 +105,36 @@ function getFestivalArtist(festivalID)
         },
         success: function (data) 
         {
-            festival = data;
+            artists = data;
         }
     });
 
-    return festival;    
+    return artists;    
+}
+
+/*  Haalt de huidige ingestelde thema op
+*   geen parameters
+*   return: De thema
+*/
+function getCurrentTheme()
+{
+    var thema = [];
+
+    // GET request alle festivals
+    $.ajax(
+    {
+        url: 'serverSided/DataEncode.php',
+        dataType: 'json',
+        type: 'GET',
+        async: false,
+        data: {
+            db: 'Themas'
+        },
+        success: function (data) 
+        {
+            thema = data;
+        }
+    });
+
+    return thema;
 }
