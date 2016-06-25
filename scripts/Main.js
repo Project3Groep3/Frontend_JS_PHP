@@ -97,7 +97,6 @@ $(document).ready(function ()
                 $(this).parent().find('h4').fadeOut().fadeIn(250);
             }
         });
-        //$(this).find('h2').css('top', '60%');
     });
 
     // Wanneer je met de muis uit een festival gaat

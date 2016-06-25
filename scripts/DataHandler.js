@@ -180,3 +180,64 @@ function getCurrentTheme(festivalID)
 
     return thema;
 }
+
+/*  Haalt de artiest object op uit de database
+*   @param1: De paginaID van de artiest
+*   return: De artiest object
+*/
+function getArtistObject(paginaID)
+{
+    var artiest = [];
+
+    // GET request alle festivals
+    $.ajax(
+    {
+        url: 'serverSided/DataEncode.php',
+        dataType: 'json',
+        type: 'GET',
+        async: false,
+        data: 
+        {
+            db: 'Artiesten',
+            whereKey: 'PaginaID',
+            whereValue: paginaID
+        },
+        success: function (data) 
+        {
+            artiest = data;
+        }
+    });
+
+    return artiest;
+}
+
+/*  Haalt de podium object op die bij de gegeven ID hoort
+*   @param1: Het ID van het podium
+*   return: Het podium
+*/
+function getPodiumByID(podiumID)
+{
+    var podium = [];
+
+    // GET request alle festivals
+    $.ajax(
+    {
+        url: 'serverSided/DataEncode.php',
+        dataType: 'json',
+        type: 'GET',
+        async: false,
+        data: 
+        {
+            db: 'Podiums',
+            whereKey: 'PodiumID',
+            whereValue: podiumID,
+            sel: 'Podiumnaam'
+        },
+        success: function (data) 
+        {
+            podium = data;
+        }
+    });
+
+    return podium;
+}

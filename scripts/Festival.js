@@ -91,4 +91,44 @@ $(document).ready(function ()
 
         navigateTo('artiest.php', 'artiest=' + txt, 'festival.php?festival=' + search);
     });
+
+    // Wanneer je met de muis over een artiest gaat
+    $('#artistTable td div').on('mouseenter', function () 
+    {
+        var row = $(this).parent().parent().index();
+        var cel = $(this).parent().index();
+        var id = row * 3 + cel;
+
+        var ar = getArtistObject(artiesten[id].PaginaID)[0];
+
+        // Afronden op twee comma's
+        var podium = getPodiumByID(ar.PodiumID)[0].Podiumnaam;
+        
+        $(this).find('h2').stop().animate(
+        {
+            top: '65%'
+        },
+        {
+            duration: 300,
+            complete: function () 
+            {
+                $(this).parent().append('<h4 hidden="hidden">' + 'Podium: ' + podium + '</h4>');
+                $(this).parent().find('h4').fadeOut().fadeIn(250);
+            }
+        });
+    });
+
+    // Wanneer je met de muis uit een artiest gaat
+    $('#artistTable td div').on('mouseleave', function () 
+    {
+        $(this).find('h4').stop().fadeOut(250, function()
+        {
+            $(this).find('h4').remove();
+        });
+
+        $(this).find('h2').stop().animate(
+        {
+            top: '75%'
+        });
+    });
 });
