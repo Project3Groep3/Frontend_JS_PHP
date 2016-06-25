@@ -1,2 +1,21 @@
-body {
+/* De Artiesten Image */
+#artiestImg
+{
+    width: 20%;
+    margin: 2% 40% 0% 40%;
+    border: 1px solid black;
+}
+
+/* De naam van de artiest */
+#artiestNaam
+{
+    text-align: center;
+}
+
+/* Informatie over de artiest */
+#artiestInfo
+{
+    text-align: center;
+    border: 1px solid black;
+    margin: 0% 5% 0% 5%;
 }

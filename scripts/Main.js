@@ -54,6 +54,7 @@ $(document).ready(function ()
 
                     var dataType = getDataType(evenementen[index].FestivalImage);
 
+                    // Voegt de image link toe
                     img.setAttribute('src', 'data:image/' + dataType + ';base64,' + hexToBase64(evenementen[index].FestivalImage));
                     img.setAttribute('alt', evenementen[index].Naam);
 

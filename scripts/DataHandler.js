@@ -13,7 +13,8 @@ function getFestivals()
         dataType: 'json',
         type: 'GET',
         async: false,
-        data: {
+        data: 
+        {
             db: 'Festival'
         },
         success: function (data) 
@@ -29,9 +30,10 @@ function getFestivals()
 *   @param1: het festival waar op gezoekt moet worden
 *   return: alle informatie over het festival
 */
-function getFestivalInfo(naam)
+function getFestivalInfo(name)
 {
     var festival = [];
+    var naam = name.replace(new RegExp('%20', 'g'), ' ');
 
     // GET request alle festivals
     $.ajax(
@@ -40,7 +42,8 @@ function getFestivalInfo(naam)
         dataType: 'json',
         type: 'GET',
         async: false,
-        data: {
+        data: 
+        {
             db: 'Festival',
             whereKey: 'Naam',
             whereValue: "'" + naam + "'"
@@ -61,6 +64,7 @@ function getFestivalInfo(naam)
 function getFestivalIDByName(name)
 {
     var festivals = [];
+    var naam = name.replace(new RegExp('%20', 'g'), ' ');
 
     // GET request alle festivals
     $.ajax(
@@ -69,19 +73,22 @@ function getFestivalIDByName(name)
         dataType: 'json',
         type: 'GET',
         async: false,
-        data: {
+        data: 
+        {
             db: 'Festival',
             whereKey: 'Naam',
-            whereValue: "'" + name + "'",
+            whereValue: "'" + naam + "'",
             sel: 'festivalID'
         },
-        success: function (data) {
+        success: function (data) 
+        {
             festivals = data;
         }
     });
 
     return festivals;
 }
+
 
 /*  Haalt informatie over het gevraagde festival op
 *   @param1: het festival waar op gezoekt moet worden
@@ -98,10 +105,11 @@ function getFestivalArtist(festivalID)
         dataType: 'json',
         type: 'GET',
         async: false,
-        data: {
+        data: 
+        {
             db: 'ArtiestenPagina',
             whereKey: 'FestivalID',
-            whereValue: festivalID.festivalID
+            whereValue: festivalID
         },
         success: function (data) 
         {
@@ -112,11 +120,42 @@ function getFestivalArtist(festivalID)
     return artists;    
 }
 
+/*  Haalt aangegeven artiest op
+*   @param1: De naam van de artiest
+*   return: Alle info van de artiest
+*/
+function getArtistByName(name)
+{
+    var artiest = [];
+    var naam = name.replace(new RegExp('%20', 'g'), ' ');
+
+    // GET request alle festivals
+    $.ajax(
+    {
+        url: 'serverSided/DataEncode.php',
+        dataType: 'json',
+        type: 'GET',
+        async: false,
+        data: 
+        {
+            db: 'ArtiestenPagina',
+            whereKey: 'Artiest',
+            whereValue: "'" + naam + "'"
+        },
+        success: function (data) 
+        {
+            artiest = data;
+        }
+    });
+
+    return artiest;
+}
+
 /*  Haalt de huidige ingestelde thema op
 *   geen parameters
 *   return: De thema
 */
-function getCurrentTheme()
+function getCurrentTheme(festivalID)
 {
     var thema = [];
 
@@ -127,8 +166,11 @@ function getCurrentTheme()
         dataType: 'json',
         type: 'GET',
         async: false,
-        data: {
-            db: 'Themas'
+        data: 
+        {
+            db: 'Themas',
+            whereKey: 'FestivalID',
+            whereValue: festivalID
         },
         success: function (data) 
         {

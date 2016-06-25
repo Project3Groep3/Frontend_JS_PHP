@@ -1,12 +1,6 @@
 // Voegt functie toe aan de terug knop
 $(document).ready(function()
 {
-    // Veranderd de thema
-    var thema = getCurrentTheme();
-    $('#title').css('background-color', thema[0].SecondaryColor).css('color', thema[0].FontColor);
-    $('#title h2').css('background-color', thema[0].PrimaryColor).css('color', thema[0].FontColor);
-    $('#title button').css('background-color', thema[0].PrimaryColor).css('color', thema[0].FontColor);
-
     // Wanneer er op de terug knop is gedrukt gaat je terug naar de vorige pagina
     $('#terug').on('click', function()
     {
@@ -90,4 +84,37 @@ function getFestivalFromSearchQuery(query)
     var nStr = query.substr(start, end);
 
     return nStr;
+}
+
+/*  Haalt de naam van de artiest op
+*   @param1: De search query
+*   return: De naam van de artiest
+*/
+function getArtistNameFromSearchQuery(query)
+{
+    query = query.replace('%20', ' ');
+    query = query.replace('&', ' ');
+    query = query.replace('?', ' ');
+    query = query.replace('artiest', ' ');
+
+    var start = query.indexOf(' ') + 3;
+    var end = query.indexOf('previous') - 4;
+
+    var nStr = query.substr(start, end);
+
+    return nStr;   
+}
+
+/*  Veranderd de thema
+*   @param1: De thema
+*   geen return
+*/
+function setTheme(festivalID)
+{
+    // Veranderd de thema
+    var thema = getCurrentTheme(festivalID);
+
+    $('#title').css('background-color', thema[0].SecondaryColor).css('color', thema[0].FontColor);
+    $('#title h2').css('background-color', thema[0].PrimaryColor).css('color', thema[0].FontColor);
+    $('#title button').css('background-color', thema[0].PrimaryColor).css('color', thema[0].FontColor);
 }

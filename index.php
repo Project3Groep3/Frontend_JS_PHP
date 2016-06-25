@@ -5,7 +5,9 @@
         <?php
             $title = 'Mojo Evenementen';
             include 'included/title.php'; 
-            include 'included/start.php';
         ?>
+    <div id="events">
+        <table id="eventTable"></table>
+    </div>
     </body>
 </html>
